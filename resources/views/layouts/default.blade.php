@@ -52,17 +52,18 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profiel <span class="glyphicon glyphicon-chevron-down" style="color: grey"></span></a>
                         <ul class="dropdown-menu">
 
-                            <li><a href="{{ url('/profile/username') }}">Profiel van {{ Auth::user()->username }}</a></li>
+                            <li><a href="{{ url('/profile/username') }}"><span class="glyphicon glyphicon-user" style="color: lightgrey"></span> Profiel van {{ Auth::user()->username }}</a></li>
                             @if(Auth::check() && Auth::user()->isAdmin())
-                                <li><a href="{{ url('users/manage') }}">Gebruikers</a></li>
-                                <li><a href="{{ url('post/manage') }}">Beheer posts</a></li>
+                                <li><a href="{{ url('users/manage') }}"><span class="glyphicon glyphicon-list-alt" style="color: lightgrey;"></span> Beheer Gebruikers</a></li>
+                                <li><a href="{{ url('post/manage') }}"><span class="glyphicon glyphicon-list-alt" style="color: lightgrey;"></span> Beheer posts</a></li>
                             @endif
+
+                            <li><a href="{{ url('comment/manage') }}"><span class="glyphicon glyphicon-comment" style="color: lightgrey;"></span> Mijn comments</a></li>
 
                             <li>
                                 <a href="{{ url('/logout') }}"
                                    onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                                    Afmelden
+                                    document.getElementById('logout-form').submit();"><span class="glyphicon glyphicon-off" style="color: lightgrey"></span> Afmelden
                                 </a>
                                 <form id="logout-form"
                                       action="{{ url('/logout') }}"
@@ -72,16 +73,10 @@
                                 </form>
                             </li>
                         </ul>
-
                     </li>
                 @endif
-
-
-
             </ul>
-
         </div>
-
     </div>
 </nav>
 

@@ -15,6 +15,17 @@
                                     <label for="username">Gebruikernaam: </label>
                                     <input type="text" id="username" class="form-control" name="username" value="{{ $user->username }}">
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="username">Email adress: </label>
+                                    <input type="text" id="email" class="form-control" name="email" value="{{ $user->email }}">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="username">Role: </label>
+                                    <input type="text" id="role" class="form-control" name="role" value="{{ $user->role }}">
+                                </div>
+
                                 <button type="submit" class="btn btn-default pull-right">Veranderen</button>
                             </form>
                         </div>

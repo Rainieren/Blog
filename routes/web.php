@@ -29,7 +29,7 @@ Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
     Route::delete('/post/manage/delete/{id}', 'ManageController@destroy')->name('deletepost');
 
     //Het maken van eem comment
-    Route::post('/comment/create', 'CommentController@store')->name('createcomment');
+
 
     //Laat gebruikers zien uit de database met Opties
     Route::get('/users/manage', 'UserController@index')->name('manageusers');
@@ -43,8 +43,14 @@ Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
     Route::get('/profile/username'. 'ProfileController@create')->name('profiel');
 });
 
-
+Route::post('/comment/create', 'CommentController@store')->name('createcomment');
 Route::get('/post/{id}', 'PostController@show')->name('showpost');
+
+//Verwijderen van comments
+Route::get('/comment/manage', 'CommentController@index')->name('managecomment');
+Route::delete('/comment/manage/delete/{id}', 'CommentController@destroy')->name('deletecomment');
+Route::get('/comment/manage/edit/{id}', 'CommentController@edit')->name('editcomment');
+Route::patch('/comment/update/{id}', 'CommentController@update')->name('updatecomment');
 
 
 

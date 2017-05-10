@@ -30,6 +30,7 @@
                                 <th scope="row">{{ $user->id }}</th>
                                 <td>{{ $user->username }}</td>
                                 <td>{{ $user->email }}</td>
+
                                 {{-- Als role = 1 laat "Admin" zien, Als role = 0 laat "Gebruiker" zien--}}
                                 <td>{{ $user->role }}</td>
 

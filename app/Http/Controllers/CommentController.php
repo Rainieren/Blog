@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
+use App\User;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -14,7 +15,9 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        $allcomments = Comment::where('user_id', auth()->id())->get(); //Comment::all();
+
+        return view('comment/comment')->with('allcomments', $allcomments);
     }
 
     /**
@@ -60,7 +63,9 @@ class CommentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comment = Comment::find($id);
+
+        return view('comment/editcomment')->with('comment', $comment);
     }
 
     /**
@@ -72,7 +77,12 @@ class CommentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $comment = Comment::find($id);
+
+        $comment->fill($request->input());
+        $comment->save();
+//        $comment->update($request->input());
+        return redirect()->route('showpost', ['id' => $comment->post_id]);
     }
 
     /**
@@ -83,6 +93,14 @@ class CommentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comment = Comment::find($id);
+
+        // De onderstaande delete verwijdert alleen de post en niet de comments
+        // Om alle comments ook te verwijderen moet je zoeken op Laravel Model Cascading Delete
+        $comment->delete();
+
+
+
+        return redirect('comment/manage');
     }
 }
