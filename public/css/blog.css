@@ -1,0 +1,162 @@
+@font-face {
+    font-family: RobotoBold;
+    src: url(../fonts/roboto/Roboto-Bold.woff);
+}
+
+@font-face {
+    font-family: RobotoRegular;
+    src: url(../fonts/roboto/Roboto-Regular.woff);
+}
+
+@font-face {
+    font-family: RobotoThin;
+    src: url(../fonts/roboto/Roboto-Thin.woff);
+}
+
+@font-face {
+    font-family: RobotoLight;
+    src: url(../fonts/roboto/Roboto-Light.woff);
+}
+
+@font-face {
+    font-family: RobotoMedium;
+    src: url(../fonts/roboto/Roboto-Medium.woff);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "RobotoLight" !important;
+}
+
+.first-container {
+	margin-top: 70px !important;
+}
+
+.panel-title-xs {
+	font-size: 8px !important;
+}
+
+a.post-read-more {
+	font-size: 12px;
+	font-style: italic;
+	color: grey;
+	display: block;
+	float: right;
+	text-decoration: none;
+}
+
+.icon-readmore {
+  color: #222222;
+	font-size: 30px;
+}
+
+.first-line-of-post {
+	line-height: 30px;
+    /* De eerste 150 teken en het eindigt met ...*/
+}
+
+.navbar-inverse {
+	background-image: none;
+	border-bottom: 3px solid orange;
+}
+
+.panel-info .panel-heading {
+  background-image: none;
+  background-color: #222222;
+  color: white;
+  border-color: none;
+}
+
+.panel-info {
+  border-color: lightgrey;
+}
+
+.icon-large {
+	font-size: 20px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.icon-small-text {
+  display: inline-block;
+  width: 100%;
+  font-size: 10px;
+  font-style: italic;
+  text-align: center;
+}
+
+.btn-new-post {
+  margin-bottom: 15px;
+
+}
+
+.btn-new-user {
+  margin-bottom: 15px;
+
+}
+
+button.btn.btn-primary {
+  background-image: none;
+  background-color: #222222;
+  border: 1px solid grey;
+}
+
+button.btn.btn-primary:hover {
+  background-image: none;
+  background-color: #333333;
+  border: 1px solid #222222;
+}
+
+.jumbotron {
+
+
+
+}
+
+.page-header {
+
+}
+
+.gebruikers_icons {
+  float: right;
+  margin-right: 20px;
+}
+
+.glyphicon {
+  color: black;
+}
+
+span.glyphicon.glyphicon-chevron-down.dropdownarrow {
+  color: lightgrey;
+}
+
+.dropdown-menu {
+  border: 3px solid orange;
+  border-top: none;
+  border-radius: 0px;
+  background-color: #222222;
+  padding: 10px;
+}
+
+.dropdown-icon {
+  color: lightgrey;
+}
+
+a.dropdown-menu {
+  color: white;
+}
+
+.dropdown-menu > li > a {
+  color: lightgrey;
+}
+
+.dropdown-menu > li >  a:hover {
+  background-color: #222222;
+  background-image: none;
+  color: white;
+}
+
+span.postopties {
+    float: right;
+    padding-left: 15px;
+}
