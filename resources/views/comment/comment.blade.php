@@ -14,7 +14,10 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="row">
-                                    <div class="col-md-10">
+                                    <div class="col-md-1">
+                                        <img src="/uploads/avatars/{{ $comment->user->avatar }}" style="width: 62px; height: 62px; position: initial; top: 0px; left: 20px; border-radius: 50%;">
+                                    </div>
+                                    <div class="col-md-9">
                                         {!! $comment->comment !!}
                                     </div>
                                     <div class="col-md-1">

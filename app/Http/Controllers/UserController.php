@@ -3,10 +3,41 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
+use Intervention\Image\File;
+
 
 class UserController extends Controller
 {
+
+    public function profile() {
+       return view('user/profile', array('user' => Auth::user()));
+    }
+
+    public function update_avatar(Request $request) {
+
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->file('avatar');
+            $filename = Auth::user()->username . time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->fit(300,300)->save( public_path('/uploads/avatars/' . $filename));
+
+            $user = Auth::user();
+            $user->avatar = $filename;
+            $user->save();
+
+            //Verwijderd vorige foto
+            if ($user->avatar != 'placeholder.png') {
+                $path = 'uploads/avatars/';
+                $lastpath = Auth::user()->Avatarpath;
+                File::Delete(public_path($path . $lastpath));
+            }
+        }
+
+        return view('user/profile', array('user' => Auth::user()));
+        //Image intervention
+    }
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +57,6 @@ class UserController extends Controller
      */
     public function create()
     {
-        // TODO: Zorg ervoor dat de link /user werkt en je wordt doorverwezen naar user.blade.php
 
         return view('/user/user');
     }
@@ -77,10 +107,15 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-
-        $user->fill($request->input());
-        $user->save();
+        $new = User::find($id);
+        $new->username = $request->username;
+        $new->email = $request->email;
+        $new->role = $request->role;
+        $new->save();
+//        $user = User::find($id);
+//        $user->role
+////        $user->fill($request->input());
+//        $user->save();
 
         return redirect()->route('manageusers', ['id' => $id]);
     }

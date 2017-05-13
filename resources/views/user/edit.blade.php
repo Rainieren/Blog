@@ -22,7 +22,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="username">Role: </label>
+                                    <label for="role">Role: </label>
                                     <input type="text" id="role" class="form-control" name="role" value="{{ $user->role }}">
                                 </div>
 

@@ -7,12 +7,20 @@
                 <div class="row-md-12">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <h1>{{ $post->title }}</h1>
-                            <p>{!! $post->text !!}</p>
+                            <div class="col-md-2">
+                                <img src="/uploads/avatars/{{ $post->user->avatar }}" style="width: 152px; height: 152px; position: absolute; top: 30px; left: 15px; border-radius: 50%;">
+                            </div>
+                            <div class="col-md-9">
+                                <h1>{{ $post->title }}</h1>
+                                <p>{!! $post->text !!}</p>
+                            </div>
+                            <div class="col-md-1">
+                                <a href=""><span class="glyphicon glyphicon-heart icon-large" style="float: right; font-size: 32px;"></span></a>
+                            </div>
                         </div>
                         <div class="panel-footer">
-                            <a href="">{{ $post->user->username }}</a>
-                            <p style="float: right;"><b>Gepost op: </b>{{ $post->created_at }}</p>
+                                <a href="">{{ $post->user->username }}</a>
+                                <p style="float: right;"><b>Gepost op: </b>{{ $post->created_at }}</p>
                         </div>
                     </div>
                 </div>
@@ -49,7 +57,10 @@
                                     <div class="panel panel-default">
                                         <div class="panel-body">
                                             <div class="row">
-                                                <div class="col-md-12">
+                                                <div class="col-md-1">
+                                                    <img src="/uploads/avatars/{{ $comment->user->avatar }}" style="width: 52px; height: 52px; position: initial; top: -5px; left: 15px; border-radius: 50%;">
+                                                </div>
+                                                <div class="col-md-10">
                                                     @if($post->comments()->count())
                                                         {!! $comment->comment !!}
                                                     @else
@@ -62,7 +73,8 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     @if($post->comments()->count())
-                                                        <a href="">{{ $comment->user->username }} </a>
+                                                        <a href="">{{ $comment->user->username }}
+                                                        </a>
                                                     @endif
                                                 </div>
                                                 <div class="col-md-6">

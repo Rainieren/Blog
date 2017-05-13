@@ -16,12 +16,10 @@
                         <h3 class="panel-title panel-title-md">LAATSTE POST</h3>
                     </div>
                     <div class="panel-body">
-                        <h3>Post Titel</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat.</p>
-                        <a href="#" class="post-read-more">Lees meer...</a>
+                        <span class=icon-small-text" style="float: right"><b>Posted on: </b>{{ $allposts->sortBydesc('id')->first()->created_at }} </span>
+                        <h3>{{ $allposts->sortBydesc('id')->first()->title }}</h3>
+                        <p>{!! str_limit($allposts->sortBydesc('id')->first()->text, $limit = 230, $end = '...') !!}</p>
+                        <a href="" class="post-read-more">Lees meer...</a>
                     </div>
                 </div>
             </div>

@@ -49,10 +49,14 @@
                     <li><a href="{{ url('/register') }}">Registreren</a></li>
                 @else
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profiel <span class="glyphicon glyphicon-chevron-down" style="color: grey"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="position: relative; padding-left: 50px;">
+                            <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width: 32px; height: 32px; position: absolute; top: 10px; left: 10px; border-radius: 50%;">
+                            {{ Auth::user()->username }}
+                            <span class="glyphicon glyphicon-menu-down" style="color: grey"></span>
+                        </a>
                         <ul class="dropdown-menu">
 
-                            <li><a href="{{ url('/profile/username') }}"><span class="glyphicon glyphicon-user" style="color: lightgrey"></span> Profiel van {{ Auth::user()->username }}</a></li>
+                            <li><a href="{{ url('user/profile') }}"><span class="glyphicon glyphicon-user" style="color: lightgrey"></span> Profiel </a></li>
                             @if(Auth::check() && Auth::user()->isAdmin())
                                 <li><a href="{{ url('users/manage') }}"><span class="glyphicon glyphicon-list-alt" style="color: lightgrey;"></span> Beheer Gebruikers</a></li>
                                 <li><a href="{{ url('post/manage') }}"><span class="glyphicon glyphicon-list-alt" style="color: lightgrey;"></span> Beheer posts</a></li>
@@ -63,7 +67,7 @@
                             <li>
                                 <a href="{{ url('/logout') }}"
                                    onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();"><span class="glyphicon glyphicon-off" style="color: lightgrey"></span> Afmelden
+                                    document.getElementById('logout-form').submit();"><span class="glyphicon glyphicon-log-out" style="color: lightgrey"></span> Afmelden
                                 </a>
                                 <form id="logout-form"
                                       action="{{ url('/logout') }}"

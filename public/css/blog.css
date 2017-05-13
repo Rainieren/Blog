@@ -107,6 +107,19 @@ button.btn.btn-primary:hover {
   border: 1px solid #222222;
 }
 
+.pull-right.btn.btn-primary {
+    background-image: none;
+    background-color: #333333;
+    border: 1px solid #222222;
+}
+
+.pull-right.btn.btn-primary:hover {
+    background-image: none;
+    background-color: #333333;
+    border: 1px solid #111111;
+}
+
+
 .jumbotron {
 
 
@@ -159,4 +172,12 @@ a.dropdown-menu {
 span.postopties {
     float: right;
     padding-left: 15px;
+}
+
+.profielfoto {
+    width: 150px;
+    height: 150px;
+    float: left;
+    border-radius: 50%;
+    margin-right: 25px
 }

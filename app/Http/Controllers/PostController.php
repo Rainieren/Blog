@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+
+//    public function laatstepost() {
+//        $posts = Post::all();
+//
+//        return view('home.index', compact('posts'));
+//    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,9 @@ class PostController extends Controller
      */
     public function index()
     {
+        //$posts = Post::all();
 
+        //return view('home/index', compact('posts'));
     }
 
     /**

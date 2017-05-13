@@ -34,7 +34,9 @@
                                 {{-- Als role = 1 laat "Admin" zien, Als role = 0 laat "Gebruiker" zien--}}
                                 <td>{{ $user->role }}</td>
 
-                                <td><a href="{{ route('deleteuser', ['id' => $user->id]) }}"
+                                <td>
+
+                                    <a href="{{ route('deleteuser', ['id' => $user->id]) }}" style="float: right;"
                                        onclick="event.preventDefault(); document.getElementById('delete-form{{ $user->id }}').submit();">
                                         <span class="glyphicon glyphicon-trash icon-large"></span>
                                         <span class="icon-small-text"><br> Verwijder </span>
@@ -45,7 +47,7 @@
                                     </a>
 
 
-                                    <a href="{{ route('edituser', ['id' => $user->id]) }}"><span class="glyphicon glyphicon-pencil icon-large"></span>
+                                    <a href="{{ route('edituser', ['id' => $user->id]) }}" style="float: right"><span class="glyphicon glyphicon-pencil icon-large"></span>
                                         <span class="icon-small-text"><br> Bewerk </span></a>
                                 </td>
                             </tr>

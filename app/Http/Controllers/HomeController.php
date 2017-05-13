@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+
     /**
      * Create a new controller instance.
      *
@@ -24,7 +25,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $posts = Post::all();
 
         return view('home/index')->with('allposts', $posts);
