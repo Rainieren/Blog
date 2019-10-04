@@ -9,6 +9,7 @@ use Intervention\Image\Facades\Image;
 use Intervention\Image\File;
 
 
+
 class UserController extends Controller
 {
 
@@ -31,7 +32,7 @@ class UserController extends Controller
             if ($user->avatar != 'placeholder.png') {
                 $path = 'uploads/avatars/';
                 $lastpath = Auth::user()->Avatarpath;
-                File::Delete(public_path($path . $lastpath));
+                File::delete(public_path($path . $lastpath));
             }
         }
 
@@ -117,7 +118,7 @@ class UserController extends Controller
 ////        $user->fill($request->input());
 //        $user->save();
 
-        return redirect()->route('manageusers', ['id' => $id]);
+        return redirect()->route('manageusers');
     }
 
     /**

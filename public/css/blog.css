@@ -23,12 +23,17 @@
     src: url(../fonts/roboto/Roboto-Medium.woff);
 }
 
+@font-face {
+    font-family: Lobster-Regular;
+    src: url(../fonts/Lobster-Regular.ttf);
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: "RobotoLight" !important;
 }
 
 .first-container {
-	margin-top: 70px !important;
+	margin-top: 90px !important;
 }
 
 .panel-title-xs {
@@ -54,9 +59,31 @@ a.post-read-more {
     /* De eerste 150 teken en het eindigt met ...*/
 }
 
+.navbar-inverse .navbar-nav > li > a {
+    color: darkgrey;
+    font-family: "RobotoRegular";
+    font-size: 14px;
+}
+
 .navbar-inverse {
+    color: black;
+    background-color: #3E4651;
 	background-image: none;
-	border-bottom: 3px solid orange;
+    border: none;
+    padding: 5px;
+}
+
+.navbar-brand {
+    font-family: Lobster-Regular;
+    font-size: 25px;
+}
+
+.dropdown-menu {
+    /*border: 3px solid orange;*/
+    border-top: none;
+    border-radius: 0px;
+    background-color: #3E4651;
+    /*padding: 10px;*/
 }
 
 .panel-info .panel-heading {
@@ -121,8 +148,7 @@ button.btn.btn-primary:hover {
 
 
 .jumbotron {
-
-
+    font-family: Lobster-Regular;
 
 }
 
@@ -141,14 +167,6 @@ button.btn.btn-primary:hover {
 
 span.glyphicon.glyphicon-chevron-down.dropdownarrow {
   color: lightgrey;
-}
-
-.dropdown-menu {
-  border: 3px solid orange;
-  border-top: none;
-  border-radius: 0px;
-  background-color: #222222;
-  padding: 10px;
 }
 
 .dropdown-icon {

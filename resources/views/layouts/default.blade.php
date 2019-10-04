@@ -7,8 +7,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="Lang" content="nl">
     <meta name="author" content="R.F. Laan">
-    <meta http-equiv="Reply-to" content="noreply@alfa-college.nl">
-    <meta name="description" content="Voorbeeld code voor de lessen rondom Laravel">
     <meta name="keywords" content="">
     <meta name="creation-date" content="03/22/2017">
     <meta name="revisit-after" content="60 days">
@@ -34,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ route('home') }}">BLOG</a>
+            <a class="navbar-brand" href="{{ route('home') }}">Forum</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse navbar-right">
             <ul class="nav navbar-nav">
@@ -66,7 +64,7 @@
 
                             <li>
                                 <a href="{{ url('/logout') }}"
-                                   onclick="event.preventDefault();
+                                    onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();"><span class="glyphicon glyphicon-log-out" style="color: lightgrey"></span> Afmelden
                                 </a>
                                 <form id="logout-form"

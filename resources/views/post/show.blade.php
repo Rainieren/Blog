@@ -52,42 +52,36 @@
                         <div class="page-header">
                             <h1>Reacties</h1>
                         </div>
-                            {{--<div class="form-group">--}}
-                                @foreach($post->comments as $comment)
+                        {{--@if(count($comment > 1))--}}
+                            {{--<p style="color: lightgrey"><i>Nog geen reacties beschikbaar</i></p>--}}
+                        {{--@else--}}
+                                @foreach($post->comments->sortBydesc('created_at') as $comment)
+
                                     <div class="panel panel-default">
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="col-md-1">
-                                                    <img src="/uploads/avatars/{{ $comment->user->avatar }}" style="width: 52px; height: 52px; position: initial; top: -5px; left: 15px; border-radius: 50%;">
+                                                    <img src="/uploads/avatars/" style="width: 52px; height: 52px; position: initial; top: -5px; left: 15px; border-radius: 50%;">
                                                 </div>
                                                 <div class="col-md-10">
-                                                    @if($post->comments()->count())
-                                                        {!! $comment->comment !!}
-                                                    @else
-                                                        <p style="color: lightgrey"><i>Nog geen reacties beschikbaar</i></p>
-                                                    @endif
+                                                    {!! $comment->comment !!}
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="panel-footer">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    @if($post->comments()->count())
-                                                        <a href="">{{ $comment->user->username }}
-                                                        </a>
-                                                    @endif
+                                                    <a href=""></a> <span class="glyphicon glyphicon-ok-circle" style="color: #1d75b3; margin-left: 5px; top: 2px;"></span>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    @if($post->comments()->count())
-                                                        <span class="post-author-postedon pull-right">
+                                                    <span class="post-author-postedon pull-right">
                                                         {{ $comment->created_at }}
                                                     </span>
-                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    @endforeach
+                            @endforeach
                                 {{--</div>--}}
                             </div>
                          </div>
